@@ -1,0 +1,26 @@
+{
+  "name": "ts-to-js-converter",
+  "version": "0.0.1",
+  "description": "Convert Typescript project to Javascript File wise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ts-node": "ts-node"
+  },
+  "author": "Jackson Sunny Rodrigues",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "fs-extra": "^10.0.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.36",
+    "@types/fs-extra": "^9.0.12",
+    "@types/lodash": "^4.14.172",
+    "@types/node": "^16.6.1",
+    "ts-node": "^10.2.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.3.5"
+  }
+}
