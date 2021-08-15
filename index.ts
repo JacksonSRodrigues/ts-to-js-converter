@@ -43,10 +43,11 @@ const validArgs = argv
 const exec_tsc = async (
   sourceFile: string,
   outDir = "./tmp",
-  target = "ES2017"
+  target = "ES2017",
+  noResolve = false
 ) => {
   return new Promise((resolve, reject) => {
-    const tscExecCode = `npx tsc ${sourceFile} --target ${target} --outDir ${outDir}`;
+    const tscExecCode = `npx tsc ${sourceFile} --target ${target} --outDir ${outDir} --noResolve ${noResolve}`;
     console.log(tscExecCode);
     exec(tscExecCode, (error, stdout, stderr) => {
       console.log(error, stdout, stderr);
@@ -74,7 +75,7 @@ const flattenItems = (itemInfos: ItemInfo[]): ItemInfo[] => {
 };
 
 const main = async () => {
-  const { source, output, target } = validArgs;
+  const { source, output, target, noResolve } = validArgs;
   const tmpDir = "./tmp";
   const sourceTree: ItemInfo = parseItem(source as string, excludeItems);
   const flattenedFiles = flattenItems([sourceTree]);
@@ -108,7 +109,7 @@ const main = async () => {
     }
 
     try {
-      await exec_tsc(fileInfo.path, tmpDir, target);
+      await exec_tsc(fileInfo.path, tmpDir, target, noResolve);
     } catch (error) {
       console.log(error);
     } finally {
@@ -129,7 +130,7 @@ const main = async () => {
         await fse.copy(tmpConvertedFullPath, destinationPath);
         return {
           ...fileInfo,
-          status: 'SUCCESS',
+          status: 'SUCCESS'
         };
       }
 
@@ -147,7 +148,8 @@ const main = async () => {
       }
       return {
         ...fileInfo,
-        status: 'FAILED'
+        status: 'FAILED',
+        failedTmpPaths: [tmpConvertedFullPath, tmpHighLevelPath]
       };
     }
   });
