@@ -2,10 +2,12 @@
   "name": "ts-to-js-converter",
   "version": "0.0.1",
   "description": "Convert Typescript project to Javascript File wise",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ts-node": "ts-node"
+    "ts-node": "ts-node",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
   },
   "author": "Jackson Sunny Rodrigues",
   "license": "MIT",

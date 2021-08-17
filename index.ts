@@ -75,7 +75,7 @@ const flattenItems = (itemInfos: ItemInfo[]): ItemInfo[] => {
 };
 
 const main = async () => {
-  const { source, output, target, noResolve } = validArgs;
+  const { source, output, target = "ES2017", noResolve = true, copyNonTSFile = false } = validArgs;
   const tmpDir = "./tmp";
   const sourceTree: ItemInfo = parseItem(source as string, excludeItems);
   const flattenedFiles = flattenItems([sourceTree]);
@@ -99,7 +99,7 @@ const main = async () => {
     await fse.ensureDir(destinationDir);
     const isTSFile = _.includes([".ts", ".tsx"], fileInfo.extension);
 
-    if (!isTSFile) {
+    if (!isTSFile && copyNonTSFile) {
       const destinationPath = path.join(destinationDir, fileInfo.name);
       await fse.copy(fileInfo.path, destinationPath);
       return {
