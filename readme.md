@@ -3,7 +3,9 @@
 Support for Recursively converting TS project files to JS (for windows)
 
 ```sh
-npx ts-to-js-converter  source=../../MyExams/whiteRabbit/ECommerceApp target=ES2017 output=./output2 noResolve=true copyNonTSFile=false
+npx ts-to-js-converter --source ../../source/folder/path --output ./output2 --target ES2017 --exclude node_modules .git .gitattributes .DS_Store android ios
+
+npx ts-to-js-converter -s ../../MyExams/whiteRabbit/ECommerceApp -o ./output2 -t ES2017 -e node_modules .git .gitattributes .DS_Store android ios
 ```
 
 in unix bases machine this can be done with below
