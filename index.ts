@@ -165,8 +165,5 @@ const main = async () => {
     )}`
   );
 };
+
 main();
-
-// console.log(tsFiles)
-
-//console.log('items:', JSON.stringify(parseItem('./', ['node_modules'])))
