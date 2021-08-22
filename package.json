@@ -1,6 +1,6 @@
 {
   "name": "ts-to-js-converter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Convert Typescript project to Javascript File wise",
   "main": "dist/index.js",
   "scripts": {
@@ -15,7 +15,8 @@
     "bluebird": "^3.7.2",
     "command-line-args": "^5.2.0",
     "fs-extra": "^10.0.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "typescript": "^4.3.5"
   },
   "bin": {
     "ts-to-js-converter": "dist/index.js"
@@ -26,7 +27,6 @@
     "@types/lodash": "^4.14.172",
     "@types/node": "^16.6.1",
     "ts-node": "^10.2.0",
-    "tslib": "^2.3.1",
-    "typescript": "^4.3.5"
+    "tslib": "^2.3.1"
   }
 }
