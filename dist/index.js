@@ -217,7 +217,7 @@ var execTSC = function (sourceFile, outDir, target, noResolve, preserveJSX) {
         2 /*return*/,
         new Promise(function (resolve, reject) {
           var tscExecCode =
-            "npx tsc " +
+            "npx -p typescript tsc " +
             sourceFile +
             " --target " +
             target +
@@ -488,6 +488,4 @@ var main = function () {
   });
 };
 main();
-// console.log(tsFiles)
-//console.log('items:', JSON.stringify(parseItem('./', ['node_modules'])))
 //# sourceMappingURL=index.js.map

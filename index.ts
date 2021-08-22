@@ -34,7 +34,7 @@ const execTSC = async (
   preserveJSX = true
 ) => {
   return new Promise((resolve, reject) => {
-    const tscExecCode = `npx tsc ${sourceFile} --target ${target} --outDir ${outDir} --noResolve ${noResolve}${
+    const tscExecCode = `npx -p typescript tsc ${sourceFile} --target ${target} --outDir ${outDir} --noResolve ${noResolve}${
       preserveJSX ? " --jsx preserve" : ""
     }`;
     console.log(tscExecCode);

@@ -1,6 +1,6 @@
 {
   "name": "ts-to-js-converter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Convert Typescript project to Javascript File wise",
   "main": "dist/index.js",
   "scripts": {
